@@ -1,0 +1,28 @@
+<%= link_to("Go Back", events_path, :class => 'back-link') %>
+
+<div class="show">
+  <div class="page">
+    <h1>Event Details</h1>
+  </div>
+  <table class="table table-bordered">
+    <tbody>
+    <%= render(:partial => 'event_table_view') %>
+    </tbody>
+  </table>
+  <% unless current_user.admin? %>
+    <%= form_for(@user_event) do |f| %>
+      <%= f.hidden_field :event_id, :value => @event.id %>
+      <% if @event_type.name.downcase.include?('volunteer') %>
+        <div class="form-group">
+          <%= f.label :volunteer_hours%>
+          <%= f.number_field :volunteer_hours, min: 0, step: :any,:required => true, class: 'form-control' %>
+        </div>
+      <% end %>
+      <div class="form-group">
+          <% unless :event_id == @event_id %>
+            <%= f.submit ('Register'), class: 'btn btn-primary btn-lg btn-block' %>
+          <% end %>
+      </div>
+    <% end %>
+  <% end %>
+</div>

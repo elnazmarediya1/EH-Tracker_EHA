@@ -1,0 +1,26 @@
+<%= link_to("Go Back", event_types_path, :class => 'back-link') %>
+
+<div class="new">
+  <div class="page">
+    <h2>Create Event Type</h2>
+  </div>
+  <div class="add">
+    <%= form_for(@event_type) do |f| %>
+
+      <div class="form-group">
+        <%= f.label :name %>
+        <%= f.text_field :name, autofocus: true, :required => true, class: 'form-control' %>
+      </div>
+
+      <div class="form-group">
+        <%= f.label :points %>
+        <%= f.number_field :points, min: 0, step: :any, :required => true, class: 'form-control' %>
+      </div>
+
+      <div class="form-group">
+        <%= f.submit ('Create'), class: 'btn btn-primary btn-lg btn-block' %>
+      </div>
+
+    <% end %>
+  </div>
+</div>

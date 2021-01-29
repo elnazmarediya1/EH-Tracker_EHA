@@ -1,0 +1,46 @@
+<head>
+  <style>
+      .link {
+          padding-right: 12px;
+          display: inline-block;
+      }
+  </style>
+</head>
+
+<div class="index">
+  <div class="page">
+    <h1>Available Event Types</h1>
+  </div>
+
+
+  <table class="table table-striped">
+    <thead>
+      <tr>
+        <th scope="col">#</th>
+        <th scope="col">Name</th>
+        <th scope="col">Actions</th>
+      </tr>
+    </thead>
+
+    <tbody>
+      <% @event_types.each_with_index do |event_type, index| %>
+        <tr>
+          <th scope="row"> <%= index + 1 %> </th>
+          <td> <%= event_type.name %> </td>
+          <td>
+            <%= link_to('Details ', event_type_path(event_type.id), :class => 'link') %>
+            <%= link_to('Edit ', edit_event_type_path(event_type.id), :class => 'link') %>
+            <%= link_to('Delete ', delete_event_type_path(event_type.id), :class => 'link') %>
+          </td>
+        </tr>
+      <% end %>
+    </tbody>
+  </table>
+
+  <div class="new action">
+    <%= link_to('Create Event Type', new_event_type_path) %>
+  </div>
+
+  <br/>
+
+</div>

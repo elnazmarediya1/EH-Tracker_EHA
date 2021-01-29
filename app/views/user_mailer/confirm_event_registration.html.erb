@@ -1,0 +1,18 @@
+<p>Hello, <%= @user.first_name %>!</p>
+
+<p>Thank you for signing up to attend <%= @event.name %>.</p>
+
+<p>Below, you may find some information regarding the event you signed up for.</p>
+
+<br/>
+
+<p>Event Name: <%= @event.name %>.</p>
+<p>Event Date: <%= @event.date.strftime("%m/%d/%Y %l:%M %p") %>.</p>
+<p>Event Location: <%= @event.location %>.</p>
+<p>Event Description: <%= @event.description %>.</p>
+<p>Event Type: <%= @event_type.name %>.</p>
+
+<br/>
+
+<p>Thank you,</p>
+<p>TAMU Engineering Honors</p>

@@ -1,0 +1,24 @@
+<tr>
+  <th scope="row">Name</th>
+  <td colspan="3"> <%= @event.name %> </td>
+</tr>
+<tr>
+  <th scope="row">Date</th>
+  <td colspan="3"> <%= @event.date.strftime("%m/%d/%Y %l:%M %p") %> </td>
+</tr>
+<tr>
+  <th scope="row">Location</th>
+  <td colspan="3"> <%= @event.location %> </td>
+</tr>
+<tr>
+  <th scope="row">Description</th>
+  <td colspan="3"> <%= @event.description %> </td>
+</tr>
+<tr>
+  <th scope="row">Event Type</th>
+  <td colspan="3"> <%= @event.event_type.name %> </td>
+</tr>
+<tr>
+  <th scope="row">Total Registered</th>
+  <td colspan="3"> <%= @event.user_events.where(event_id: @event.id).count %> / <%= @event.max_capacity %></td>
+</tr>

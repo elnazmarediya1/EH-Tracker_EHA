@@ -1,0 +1,93 @@
+<head>
+  <style>
+      .link {
+          padding-right: 12px;
+          display: inline-block;
+      }
+  </style>
+</head>
+
+<div class="index">
+  <div class="page">
+    <h1>Manage Users</h1>
+  </div>
+
+  <div class="page">
+    <h2>Members</h2>
+  </div>
+
+  <table class="table table-striped">
+    <thead>
+      <tr>
+        <th scope="col">Name</th>
+        <th scope="col">UIN</th>
+        <th scope="col"><%=colsort "volunteer_hours", "Hours"%></th>
+        <th scope="col"><%=colsort "points", "Points"%></th>
+        <th scope="col">User Participation</th>
+        <th scope="col">Actions</th>
+      </tr>
+    </thead>
+    <br/>
+    <p> <b>Sort By: </b>
+      <%=colsort "volunteer_hours", "Hours"%> |
+      <%=colsort "points", "Points"%>
+    </p>
+    <br/>
+    <tbody>
+      <% @members.each do |user| %>
+        <tr>
+          <td> <%= user.last_name %>, <%= user.first_name %> </td>
+          <td> <%= user.uin %> </td>
+          <td> <%= user.volunteer_hours %> </td>
+          <th scope="row"> <%= user.points %> </th>
+          <td>
+            <%= link_to('View Upcoming ', user_events_path(current_user.id, view_id: user.id), :class => 'link') %>
+            <%= link_to('View Past ', user_events_past_path(current_user.id, view_id: user.id), :class => 'link') %>
+          </td>
+          <td>
+            <%= link_to('Details ', user_path(user.id), :class => 'link') %>
+            <%= link_to('Edit ', edit_user_path(user.id), :class => 'link') %>
+            <%= link_to('Delete ', delete_user_path(user.id), :class => 'link') %>
+          </td>
+        </tr>
+      <% end %>
+    </tbody>
+  </table>
+
+  <div class="page">
+    <h2>Admins</h2>
+  </div>
+
+  <table class="table table-striped">
+    <thead>
+      <tr>
+        <th scope="col">Name</th>
+        <th scope="col">Email</th>
+        <th scope="col">UIN</th>
+        <th scope="col">Actions</th>
+      </tr>
+    </thead>
+
+    <tbody>
+      <% @admins.each do |user| %>
+        <tr>
+          <td> <%= user.last_name %>, <%= user.first_name %> </td>
+          <td> <%= user.email %> </td>
+          <td> <%= user.uin %> </td>
+          <td>
+            <%= link_to('Details ', user_path(user.id), :class => 'link') %>
+            <%= link_to('Edit ', edit_user_path(user.id), :class => 'link') unless user.superadmin? && !current_user.superadmin? %>
+            <% if current_user.superadmin?%>
+              <%= link_to('Delete ', delete_user_path(user.id), :class => 'link') unless user.superadmin? %>
+            <% end %>
+          </td>
+        </tr>
+      <% end %>
+    </tbody>
+  </table>
+
+  <%= link_to('Export CSV', users_export_csv_path(format: "csv")) %>
+  <br/>
+  <br/>
+
+</div>

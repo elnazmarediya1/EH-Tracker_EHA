@@ -1,0 +1,17 @@
+<%= link_to("Go Back", users_path, :class => 'back-link') %>
+
+<div class="delete">
+  <div class="page">
+    <h2>Confirm Delete</h2>
+  </div>
+
+  <%= form_for(@user, :method => 'delete') do |f| %>
+    <div class="alert alert-danger" role="alert">
+      Are you sure you wish to delete this user - <a class="alert-link"> <%= @user.last_name %>, <%= @user.first_name %></a>?
+    </div>
+
+    <div class="form-group">
+      <%= f.submit ('Delete'), class: 'btn btn-primary btn-lg btn-block' %>
+    </div>
+  <% end %>
+</div>

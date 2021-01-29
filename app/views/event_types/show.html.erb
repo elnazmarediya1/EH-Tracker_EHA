@@ -1,0 +1,20 @@
+<%= link_to("Go Back", event_types_path, :class => 'back-link') %>
+
+<div class="show">
+  <div class="page">
+    <h1>Event Type Details</h1>
+  </div>
+
+  <table class="table table-bordered">
+    <tbody>
+    <tr>
+      <th scope="row">Name</th>
+      <td colspan="3"> <%= @event_type.name %> </td>
+    </tr>
+      <th scope="row">Points</th>
+      <td colspan="3"> <%= @event_type.points %> </td>
+    </tr>
+
+    </tbody>
+  </table>
+</div>

@@ -1,0 +1,247 @@
+<% if user_signed_in? %>
+  <% if current_user.admin? %>
+    <h2><b><span>Create an event type:</span></b></h2>
+
+    <p><span>1.<span>&nbsp;&nbsp;&nbsp;&nbsp;</span></span><span >Create an event type, by clicking on the “Create Event Type” button under the “View Event Types” tab:</span></p>
+
+    <p><span><%= image_tag('image018.png', :height => 300) %></span></p>
+
+    <p><span>2.<span>&nbsp;&nbsp;&nbsp;&nbsp;</span></span><span>Name the event and assign the appropriate points to the event:</span></p>
+
+    <p><span><%= image_tag('image019.png', :height => 300) %></span></p>
+
+    <p><span></span><span>When creating volunteer event types, make sure the word “volunteer” is in the name of the event type so that it will prompt the user to input their volunteer hours. Make sure that the volunteer event types have 0 points so that only the volunteer hours are counted as points.</span></p>
+
+    <p><span>3.<span>&nbsp;&nbsp;&nbsp;&nbsp;</span></span><span>After clicking “Create”, you should get the following message that your event type was created successfully:</span></p>
+
+    <p><span><%= image_tag('image020.png', :width => 1000) %></span></p>
+
+   
+    <h2><b><span>Edit an event type:</span></b></h2>
+
+    <p><span>1.<span>&nbsp;&nbsp;&nbsp;&nbsp;</span></span><span>You can view your new event type under the “View Event Types” tab. You can view the details, edit the event type and delete the event type. To edit an event, you can fill in the fields with the correct information.</span></p>
+    
+    <p><span><%= image_tag('image021.png', :height => 300) %></span></p>
+
+    <p><span>2.<span>&nbsp;&nbsp;&nbsp;&nbsp;</span></span><span>You should receive a notification saying that you successfully edited an event type. </span></p>
+    
+    <p><span><%= image_tag('image022.png', :width => 1000) %></span></p>
+    
+    <p><span>3.<span>&nbsp;&nbsp;&nbsp;&nbsp;</span></span><span>To delete and event, click the delete option and the screen should ask you to confirm your changes to make sure no mistakes are made. You can click “Go Back”, if you do not want to confirm or want to cancel the changes made:</span></p>
+
+    <p><span><%= image_tag('image023.png', :width => 1000) %></span></p>
+
+    <p><span>4.<span>&nbsp;&nbsp;&nbsp;&nbsp;</span></span><span>You should get a message confirming that the event is successfully deleted:</span></p>
+
+    <p><span><%= image_tag('image024.png', :width => 1000) %></span></p>
+
+
+    <h2><b><span>Create an Event:</span></b></h2>
+
+    <p><span>1.<span>&nbsp;&nbsp;&nbsp;&nbsp;</span></span><span>To create an event, you will need to create an event type first, or have an event type saved. Check the “View Event Types” tab to make sure that the event type with the correct points is made. </span></p>
+
+    <p><span>2.<span>&nbsp;&nbsp;&nbsp;&nbsp;</span></span><span>In the “All Upcoming Events” tab, click on the “Create Event” button.</span></p>
+    
+    <p><span><%= image_tag('image025.png', :width => 1000) %></span></p>
+
+    <p><span>3.<span>&nbsp;&nbsp;&nbsp;&nbsp;</span></span><span>Fill in all the fields for the event. Maximum capacity is the amount of people allowed to sign up for the event. Keep in mind that once the maximum capacity is met, users will not be able to sign up for the event. Make sure to select the correct event type from the drop-down menu. This will reflect the amount of points the event is worth or prompt the user to fill in their hours.</span></p>
+
+    <p><span>4.<span>&nbsp;&nbsp;&nbsp;&nbsp;</span></span><span>Click the event “Create” button to save the event.</span></p>
+
+    <p><span><%= image_tag('image026.png', :width => 1000) %></span></p>
+
+    <p><span></span><span>If the events are filled in incorrectly, there will be an error message prompting you to fix this once the “Create” button is clicked. The date can only be in the future.</span></p>
+    
+    <p><span>5.<span>&nbsp;&nbsp;&nbsp;&nbsp;</span></span><span>You should get a message showing that the event is created successfully:</span></p>
+
+    <p><span><%= image_tag('image027.png', :width => 1000) %></span></p>
+
+
+    <h2><b><span>Edit an event:</span></b></h2>
+
+    <p><span>1.<span>&nbsp;&nbsp;&nbsp;&nbsp;</span></span><span>Find the event in the appropriate tab. If it has been one week since the event was made, the event would be in the past events tab otherwise it should be in upcoming events type. </span></p>
+
+    <p><span>2.<span>&nbsp;&nbsp;&nbsp;&nbsp;</span></span><span>Click on the "Edit" button on the event card:</span></p>
+
+    <p><span><%= image_tag('image028.png', :width => 1000) %></span></p>
+
+    <p><span>3.<span>&nbsp;&nbsp;&nbsp;&nbsp;</span></span><span> You should fill in every field that is shown below: </span></p>
+    
+    <p><span><%= image_tag('image029.png', :width => 1000) %></span></p>
+
+    <p><span></span><span> Make sure that all fields are filled in correctly before submitting. Double check the date should be correct because it could be changed to the past and become expired. If the active selection is changed then the users will not be able to see an event that is not active after a day of changing its status. Make sure it also has the correct event type. You can change this with the drop down box.</span></p>
+
+    <p><span>4.<span>&nbsp;&nbsp;&nbsp;&nbsp;</span></span><span> Hit the update button after you are sure you want to save the changes.</span></p>
+
+    <p><span>5.<span>&nbsp;&nbsp;&nbsp;&nbsp;</span></span><span> You should receive this message after submitting the changes: </span></p>
+
+    <p><span><%= image_tag('image030.png', :width => 1000) %></span></p>
+
+    <h2><b><span>Manage Users:</span></b></h2>
+    
+    <p><span></span><span> You can customize everything in the "Manage Users" page</span></p>
+
+    <p><span></span><span> When you click the different sorters, "Hours", and "Points", it will sort each non-admin member by their points or hours. Click again to change from acsending or descending</span></p>
+
+    <p><span></span><span> "View Upcoming" shows a user's current statistics and the events they will attend in the future. "View Past" shows a user's current statistics and the events they have attended in the past. </span></p>
+
+    <p><span></span><span> "Details" allows you to see the users current details.</span></p>
+
+    <p><span></span><span> "Edit" allows you to change a user's existing details. </span></p>
+
+    <p><span></span><span> Only a super-admin has the privilege to change an account to admin. They can change a person's privledged by clicking the checkbox in the center, when they click "Edit" user. They can remove privledges the same way.</span></p>
+
+    <p><span><%= image_tag('image031.png', :width => 1000) %></span></p>
+
+    <p><span></span><span> The "Delete" button deletes a user from the application. They will have to re-register to use the application again.</span></p>
+
+    <p><span></span><span> A regular admin cannot give another user privledges, neither can they delete other admins. These priviledges are only given to the super admins. Contact the super-admin to do any of these actions.</span></p>
+
+    <p><span></span><span> Users are seperated by Admins and Users. The users are able to sign up and mark their attendence whereas admins can create events and manage users</span></p>
+
+    <p><span></span><span> Super-admins can be identified by those accounts that do not have a "Delete" button. Contact them to perform actions that are beyond your priviledge. </span></p>
+
+    <h2><b><span>Email Confimations:</span></b></h2>
+    
+    <p><span></span><span>An admin will receive an email confirmation on their own account creation. Make sure to confirm the account before use. They will also receive an email every time a new user registers for an account. They will be able to view their information.</span></p>
+    
+    <p><span></span><span>Regular users will receive a confirmation when creating their own account and they will receive a confirmation email every time they register for an event. Make sure that the user received a confirmation email for registering for an event, when helping them troubleshooting a problem. </span></p>
+
+    <h2><b><span>Troubleshooting:</span></b></h2>
+
+    <p><span></span><span>Make sure to login and logout every use to access any webpages from this application. Follow the instructions above to find the best solution for your problems. Help other users who ask for help, by making sure that they have signed up for the correct event, received a confirmation email, and have the appropriate points. An admin can edit the event, a user’s points but they cannot sign them up for an event. Make sure that the user signs up for an event at the correct time. If they missed the sign up an admin can adjust their points.</span></p>
+    
+    <p><span></span><span>Please practice precaution when accessing another user’s information. </span></p>
+
+    <p><span></span><span>If there is a system crash or the instructions above cannot solve your problem, please contact application support.</span></p>
+
+  <% else %>
+    <h2><b><span>Register for an event:</span></b></h2>
+
+    <p><span>1.<span>&nbsp;&nbsp;&nbsp;&nbsp;</span></span><span>After logging onto the webpage, you should be able to see the navigation bar with tabs. Click the “All Upcoming Events Button”.</span></p>
+
+    <p><span><%= image_tag('image005.png', :height => 300) %></span></p>
+
+    <p><span>2.<span>&nbsp;&nbsp;&nbsp;&nbsp;</span></span><span>Find the event that you need to sign up for and click the “Register” button:</span></p>
+    
+    <p><span><%= image_tag('image006.png', :height => 300) %></span></p>
+
+    <p><span>3.<span>&nbsp;&nbsp;&nbsp;&nbsp;</span></span><span>Upon clicking the “Register” button, you will be asked to confirm the details and click the red “Register” button.</span></p>
+    
+    <p><span><%= image_tag('image007.png', :height => 300) %></span></p>
+
+    <p><span></span><span>Depending on the event type, you will be prompted to fill in volunteer hours. If the event asks for volunteer hours, please fill in your volunteer hours for that event before clicking “Register”. </span></p>
+    
+    <p><span><%= image_tag('image008.png', :height => 300) %></span></p>
+
+    <p><span>4.<span>&nbsp;&nbsp;&nbsp;&nbsp;</span></span><span>After clicking “Register” you should be redirected to “My Statistics” page, when successfully registering for an event.</span></p>
+    
+    <p><span><%= image_tag('image013.png', :height => 300) %></span></p>
+
+    <p><span></span><span>Make sure that the appropriate amount of points and volunteer hours are added to your total statistics. You should also receive a confirmation email for successfully registering. If you are not able to sign up, you should receive a message showing that the event is at maximum capacity.</span></p>
+    
+    
+    <h2><b><span>Cancel registration for an event:</span></b></h2>
+
+    <p><span>1.<span>&nbsp;&nbsp;&nbsp;&nbsp;</span></span><span>Go to “My Upcoming Events” tab:</span></p>
+
+    <p><span><%= image_tag('image014.png', :height => 300) %></span></p>
+
+    <p><span>2.<span>&nbsp;&nbsp;&nbsp;&nbsp;</span></span><span>Click on the “Cancel Registration” button of the event for which you want to cancel the registration: </span></p>
+    
+    <p><span><%= image_tag('image015.png', :height => 300) %></span></p>
+
+    <p><span>3.<span>&nbsp;&nbsp;&nbsp;&nbsp;</span></span><span>Click on “Cancel Registration”, after confirming that you do want to cancel your registration:</span></p>
+
+    <p><span><%= image_tag('image016.png', :height => 300) %></span></p>
+
+    <p><span>4.<span>&nbsp;&nbsp;&nbsp;&nbsp;</span></span><span>After cancelling the registration, you should see this notification:</span></p>
+
+    <p><span><%= image_tag('image017.png', :height => 300) %></span></p>
+
+    <p><span></span>The points and volunteer hours for that particular event should also be taken away. Make sure you see these signs after cancelling an event sign up.<span></span></p>
+
+
+    <h2><b><span>Track your participation:</span></b></h2>
+
+    <p><span></span>To track your participation, you can browse through the tabs on the web page. Each tab specifies what information it contains.<span></span></p>
+
+    <p><span>1.<span>&nbsp;&nbsp;&nbsp;&nbsp;</span></span><span>The “Leaderboard” tab contains personal statistics and the leaderboard of top 10 people with the highest points.</span></p>
+    
+    <p><span>2.<span>&nbsp;&nbsp;&nbsp;&nbsp;</span></span><span>The “My Statistics” section shows your current rank, total points, and total volunteer hours. </span></p>
+
+    <p><span>3.<span>&nbsp;&nbsp;&nbsp;&nbsp;</span></span><span>The “My Statistics” section is available all tabs to access your total points and volunteer hours. To access your ranking information, you will need to visit the “Leaderboard” tab.</span></p>
+
+    <p><span>4.<span>&nbsp;&nbsp;&nbsp;&nbsp;</span></span><span>The “My Upcoming Events” tab, shows event for which you have registered and yet have to attend. This is where you can check the details for an event and cancel registration.</span></p>
+
+    <p><span>5.<span>&nbsp;&nbsp;&nbsp;&nbsp;</span></span><span>The “My Past Events” tab, is where you can view events that you had signed up for and have already attended in the past. You can check your statistics on this page and view the details of the past event.</span></p>
+
+    <p><span>6.<span>&nbsp;&nbsp;&nbsp;&nbsp;</span></span><span>The “All Upcoming Events” tab is where you can view new events that you have to yet sign up for and attend. You can register for an event after accessing this tab. To find your event, you can also sort all events using the filters on the page.</span></p>
+
+    <p><span>7.<span>&nbsp;&nbsp;&nbsp;&nbsp;</span></span><span>	The “All Past Events” tab is where you can see the history of all events. You can also sort the events to find which event you are looking for. </span></p>
+    
+
+    <h2><b><span>Troubleshooting:</span></b></h2>
+    
+    <p><span></span><span>Make sure that you are signed in to the appropriate account and log out after using the webpage. You should see an error message for accessing an incorrect page or if your request was not filled. Please try to follow the instructions for registering for an account or an event so that you do not run into errors. If your information is incorrect for any reason or if you run into a problem not addressed in the instructions above please contact a system administrator of an EHA officer. </span></p>
+
+
+  <% end %>
+<% else %>
+
+    <h2 class = "open" id = "getting-started"><b><span>Getting Started:</span></b></h2>
+
+    <p><span>1.<span>&nbsp;&nbsp;&nbsp;&nbsp;</span></span><span >After visiting the website, you should see this welcome screen:</span></p>
+
+    <p><span><%= image_tag('image001.png', :height => 300) %></span></p>
+    
+    <p><span>2.<span>&nbsp;&nbsp;&nbsp;&nbsp;</span></span><span>Click the login tab, log into your account: </span></p>
+
+    <p><span><%= image_tag('image009.png', :height => 300) %></span></p>
+
+    <p><span>3.<span>&nbsp;&nbsp;&nbsp;&nbsp;</span></span><span>Fill in the fields with your TAMU email and password: </span></p>
+
+    <p><span><%= image_tag('image010.png', :height => 300) %></span></p>
+
+    <p><span></span><span>If you do not fill in the details correctly you will recieve and error message. Fill in your correct information and try again.</span></p>
+
+    <p><span>4.<span>&nbsp;&nbsp;&nbsp;&nbsp;</span></span><span>If you forgot your password click this link. </span></p>
+
+    <p><span><%= image_tag('image011.png', :height => 300) %></span></p>
+
+    <p><span></span><span>You will be prompted to fill in your email address, where you will recieve a link to change your password. You can log in again with your new password.</span></p>
+
+    
+    <h2 class = "open" id = "register-account"><b><span>Register for an account:</span></b></h2>
+
+    <p><span>1.<span>&nbsp;&nbsp;&nbsp;&nbsp;</span></span><span >After visiting the website, you should see this welcome screen:</span></p>
+
+    <p><span><%= image_tag('image001.png', :height => 300) %></span></p>
+
+    <p><span>2.<span>&nbsp;&nbsp;&nbsp;&nbsp;</span></span><span>Click the registration tab, to sign up for a new account:</span></p>
+
+    <p><span><%= image_tag('image002.png', :height => 300) %></span></p>
+
+    <p><span>3.<span>&nbsp;&nbsp;&nbsp;&nbsp;</span></span><span>Fill in the registration fields appropriately with your information:</span></p>
+
+    <p><span><%= image_tag('image003.png', :height => 300) %></span></p>
+
+    <p><span></span><span>Add you first name and last name. Make sure your UIN is correct and has the correct number of digits. Use your TAMU email to sign up for an account. Think of a password that is unique and has at least 6 characters. Make sure to type the password again to confirm the password. Click the “Sign Up” button to register.</span></p>
+     
+    <p><span>4.<span>&nbsp;&nbsp;&nbsp;&nbsp;</span></span><span> You have to confirm your account through your email. If you did not recieve a confirmation email, click this link. It should send you another email where you can confirm your account.</span></p>
+
+    <p><span><%= image_tag('image012.png', :height => 300) %></span></p>
+
+    <p><span>5.<span>&nbsp;&nbsp;&nbsp;&nbsp;</span></span><span>After confirming you email, you can click “Login” to use the application.</span></p>
+
+    <p><span><%= image_tag('image004.png', :height => 300) %></span></p>
+
+    <p><span>6.<span>&nbsp;&nbsp;&nbsp;&nbsp;</span></span><span>Click the login tab, log into your account: </span></p>
+
+    <p><span><%= image_tag('image009.png', :height => 300) %></span></p>
+
+    <p><span>7.<span>&nbsp;&nbsp;&nbsp;&nbsp;</span></span><span>Fill in the fields with your TAMU email and password: </span></p>
+
+    <p><span><%= image_tag('image010.png', :height => 300) %></span></p>
+
+<% end %>

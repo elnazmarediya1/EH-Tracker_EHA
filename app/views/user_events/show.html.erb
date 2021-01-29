@@ -1,0 +1,19 @@
+<% if current_user.admin? %>
+  <%= link_to("Go Back", user_events_path(current_user.id, view_id: @user.id), :class => 'back-link') %>
+<% else %>
+  <%= link_to("Go Back", user_events_path, :class => 'back-link') %>
+<% end %>
+<div class="show">
+  <div class="page">
+    <h1>Event Details</h1>
+  </div>
+  <table class="table table-bordered">
+    <tbody>
+    <%= render(:partial => 'event_table_view') %>
+    <tr>
+      <th scope="row">Volunteer Hours</th>
+      <td colspan="3"> <%= @user_event.volunteer_hours %> </td>
+    </tr>
+    </tbody>
+  </table>
+</div>

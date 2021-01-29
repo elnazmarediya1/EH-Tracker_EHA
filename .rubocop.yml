@@ -1,0 +1,88 @@
+inherit_from: .rubocop_todo.yml
+
+require: rubocop-rspec
+
+# basic rubocop preferences
+
+Style/FrozenStringLiteralComment:
+  Enabled: false
+
+Metrics/BlockLength:
+  Max: 261
+
+Metrics/AbcSize:
+  Max: 51
+
+Metrics/ClassLength:
+  Max: 113
+
+Metrics/CyclomaticComplexity:
+  Max: 9
+
+Metrics/MethodLength:
+  Max: 27
+
+Metrics/PerceivedComplexity:
+  Max: 9
+
+Naming/VariableName:
+  EnforcedStyle: snake_case
+  Exclude:
+  - 'app/helpers/encrypt_decrypt_helper.rb'
+
+Style/Documentation:
+  Enabled: false
+
+Layout/LineLength:
+  Max: 267
+
+# rubocop-rspec preferences
+
+RSpec/BeforeAfterAll:
+  Exclude:
+    - 'spec/spec_helper.rb'
+    - 'spec/rails_helper.rb'
+    - 'spec/support/**/*.rb'
+    - 'spec/controller/event_types_controller_spec.rb'
+    - 'spec/controller/events_controller_spec.rb'
+    - 'spec/controller/user_events_controller_spec.rb'
+    - 'spec/controller/users_controller_spec.rb'
+    - 'spec/models/event_spec.rb'
+    - 'spec/models/user_event_spec.rb'
+
+RSpec/ExampleLength:
+  Exclude:
+    - 'spec/controller/registrations_controller_spec.rb'
+    - 'spec/features/event_types_spec.rb'
+    - 'spec/features/events_spec.rb'
+    - 'spec/features/user_events_spec.rb'
+    - 'spec/features/users_spec.rb'
+
+RSpec/InstanceVariable:
+  Exclude:
+    - 'spec/controller/event_types_controller_spec.rb'
+    - 'spec/controller/events_controller_spec.rb'
+    - 'spec/controller/user_events_controller_spec.rb'
+    - 'spec/controller/users_controller_spec.rb'
+    - 'spec/features/event_types_spec.rb'
+    - 'spec/features/events_spec.rb'
+    - 'spec/features/user_events_spec.rb'
+    - 'spec/models/event_spec.rb'
+    - 'spec/models/user_event_spec.rb'
+
+RSpec/IteratedExpectation:
+  Exclude:
+    - 'spec/features/user_events_spec.rb'
+
+RSpec/MultipleDescribes:
+  Exclude:
+    - 'spec/controller/registrations_controller_spec.rb'
+    - 'spec/features/users_spec.rb'
+    - 'spec/models/user_event_spec.rb'
+
+RSpec/MultipleExpectations:
+  Max: 10
+
+RSpec/LetSetup:
+  Exclude:
+    - 'spec/controller/registrations_controller_spec.rb'

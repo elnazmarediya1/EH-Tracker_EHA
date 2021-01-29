@@ -1,0 +1,20 @@
+<%= link_to("Go Back", user_events_path, :class => 'back-link') %>
+
+<div class="delete">
+
+  <div class="page">
+    <h2>Confirm cancellation of registration for this event</h2>
+  </div>
+
+  <%= form_for(@user_event, :method => 'delete') do |f| %>
+
+    <div class="alert alert-danger" role="alert">
+      Are you sure you wish to cancel your registration for this event - <a class="alert-link"> <%= @user_event.event.name %></a>?
+    </div>
+
+    <div class="form-group">
+      <%= f.submit ('Cancel Registration'), class: 'btn btn-primary btn-lg btn-block' %>
+    </div>
+
+  <% end %>
+</div>

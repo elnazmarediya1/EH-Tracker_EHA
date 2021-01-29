@@ -1,0 +1,21 @@
+<% if user_signed_in? %>
+  <div class="jumbotron">
+    <h1 class="display-4">Hello, <%= current_user.first_name %>!</h1>
+    <p class="lead">Welcome to your account dashboard.</p>
+    <hr class="my-4">
+    <p class="lead">
+      <%= link_to "Edit Account", edit_user_registration_path, form: { style: 'display: inline-block;' }, :class => 'btn btn-primary btn-lg' %>
+      <%= link_to "Logout", destroy_user_session_path, method: :delete, form: { style: 'display: inline-block;' }, :class => 'btn btn-primary btn-lg' %>
+    </p>
+  </div>
+<% else %>
+  <div class="jumbotron">
+    <h1 class="display-4">Welcome!</h1>
+    <p class="lead">Please login to continue.</p>
+    <hr class="my-4">
+    <p class="lead">
+      <%= link_to "Sign Up", new_user_registration_path, form: { style: 'display: inline-block;' }, :class => 'btn btn-primary btn-lg' %>
+      <%= link_to "Login", new_user_session_path, form: { style: 'display: inline-block;' }, :class => 'btn btn-primary btn-lg' %>
+    </p>
+  </div>
+<% end %>

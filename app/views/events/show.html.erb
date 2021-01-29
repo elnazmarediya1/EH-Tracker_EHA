@@ -1,0 +1,18 @@
+
+<% if @event.active? %>
+  <%= link_to("Go Back", events_path, :class => 'back-link') %>
+<% else %>
+  <% flash.now.alert = t("This event is inactive.") %>
+  <%= link_to("Go Back", events_past_path, :class => 'back-link') %>
+<% end %>
+
+<div class="show">
+  <div class="page">
+    <h1>Event Details</h1>
+  </div>
+    <table class="table table-bordered">
+      <tbody>
+        <%= render(:partial => 'event_table_view') %>
+      </tbody>
+    </table>
+</div>

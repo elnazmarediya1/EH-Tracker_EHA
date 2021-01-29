@@ -1,0 +1,15 @@
+<p class="card-text">
+  <strong>Date:</strong> <%= event.date.strftime("%m/%d/%Y %l:%M %p") %>
+</p>
+<p class="card-text">
+  <strong>Location:</strong> <%= event.location %>
+</p>
+<p class="card-text">
+  <strong>Description:</strong> <%= event.description %>
+</p>
+<p class="card-text">
+  <strong>Event Type:</strong> <%= event.event_type.name %>
+</p>
+<p class="card-text">
+  <strong>Total Registered:</strong> <%= event.user_events.where(event_id: event.id).count %>  / <%= event.max_capacity %>
+</p>

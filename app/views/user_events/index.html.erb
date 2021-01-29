@@ -1,0 +1,109 @@
+<head>
+  <style>
+      .link {
+          padding-right: 12px;
+          display: inline-block;
+      }
+  </style>
+</head>
+
+<div class="index">
+  <% if current_user.admin? && (current_user.id != @user.id)%>
+  <%= link_to("Go Back", users_path, :class => 'back-link') %>
+    <div class="page">
+      <h1>Viewing <b><%= @username %></b> Participation</h1>
+    </div>
+  <% end %>
+
+  <br/>
+
+  <div class="page">
+    <h1><%= @username %> Statistics</h1>
+  </div>
+
+  <br/>
+
+  <div class="card">
+    <div class="card-body">
+      <p class="card-text">
+        <strong>Points:</strong> <%= @user.points %> <br>
+        <strong>Volunteer Hours:</strong> <%= @user.volunteer_hours %>
+      </p>
+    </div>
+  </div>
+
+  <br/>
+  <br/>
+   <% unless current_user.admin? %>
+   <p> <b>Sort By: </b> <%= colsort "name", "Name"%> |
+     <%= colsort "date", "Date"%>  |
+     <%= colsort "location", "Location"%>
+   </p>
+    <br/>
+<% end %>
+
+  <div class="page">
+    <h3><%= @username %> Upcoming Events</h3>
+  </div>
+
+  <br/>
+
+  <% @events.each_with_index do |event, index| %>
+
+    <div class="card">
+      <h5 class="card-header"> <%= event.name %> </h5>
+      <div class="card-body">
+        <%= render(:partial => 'event_card_view', locals: { event: event }) %>
+        <% if event.event_type.name.downcase.include?('volunteer') %>
+          <p class="card-text">
+            <strong>Volunteer Hours:</strong> <%= @user_events.find_by(event_id: event.id).volunteer_hours %>
+          </p>
+        <% end %>
+        <% if current_user.admin? %>
+          <%= link_to('Details ', user_event_path(event.id, view_id: @user.id), :class => 'link') %>
+          <%= link_to('Cancel Registration', delete_user_event_path(event.id, view_id: @user.id), :class => 'link') %>
+        <% else %>
+          <%= link_to('Details ', user_event_path(event.id), :class => 'link') %>
+          <%= link_to('Cancel Registration', delete_user_event_path(event.id), :class => 'link') %>
+        <% end %>
+      </div>
+    </div>
+
+    <br/>
+
+  <% end %>
+
+  <% if @events.empty? %>
+    <div class="alert alert-info" role="alert">
+      <% if current_user.admin? && (current_user.id != @user.id) %>
+         <%= @user.first_name + ' ' + @user.last_name + ' has not registered for any events.'%>
+      <% else %>
+        You have not registered for any events.
+      <% end %>
+    </div>
+  <% end %>
+  <br/>
+
+  <div>
+    <nav aria-label="Page navigation example">
+  <ul class="pagination justify-content-end">
+    <% if !(@page <= 0) %>
+      <li class="page-item">
+        <%= link_to('Previous', user_events_path(page: @page - 1), :class => 'page-link') %>
+      </li>
+    <% end %>
+    <% for num in 1..(@total_pages)
+        if @total_pages != 1%>
+      <li class="page-item"><a class="page-link" href="<%= user_events_path(page: (num - 1))%>"><%= num %></a></li>
+      <%   end
+      end %>
+    <% if !(@page >= (@total_pages - 1)) %>
+      <li class="page-item">
+        <%=  link_to('Next', user_events_path(page: @page + 1), :class => 'page-link') %>
+      </li>
+    <%end%>
+  </ul>
+  </nav>
+  </div>
+
+</div>

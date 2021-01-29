@@ -1,0 +1,47 @@
+<%= link_to("Go Back", users_path, :class => 'back-link') %>
+
+<div class="show">
+  <div class="page">
+    <h1>User Details</h1>
+  </div>
+
+  <table class="table table-bordered">
+    <tbody>
+    <tr>
+      <th scope="row">First Name</th>
+      <td colspan="3"> <%= @user.first_name %> </td>
+    </tr>
+    <tr>
+      <th scope="row">Last Name</th>
+      <td colspan="3"> <%= @user.last_name %> </td>
+    </tr>
+    <tr>
+      <th scope="row">UIN</th>
+      <td colspan="3"> <%= @user.uin %> </td>
+    </tr>
+    <tr>
+      <th scope="row">Email</th>
+      <td colspan="3"> <%= @user.email %> </td>
+    </tr>
+    <tr>
+      <th scope="row">Admin<First Name</th>
+      <td colspan="3"> <%= @user.admin %> </td>
+    </tr>
+    <% if @user.superadmin? %>
+      <tr>
+        <th scope="row">Superadmin<First Name</th>
+        <td colspan="3"> <%= @user.superadmin %> </td>
+      </tr>
+    <% end %>
+    <tr>
+      <th scope="row">Points</th>
+      <td colspan="3"> <%= @user.points %> </td>
+    </tr>
+    <tr>
+      <th scope="row">Volunteer Hours</th>
+      <td colspan="3"> <%= @user.volunteer_hours %> </td>
+    </tr>
+
+    </tbody>
+  </table>
+</div>
